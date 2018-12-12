@@ -1489,6 +1489,8 @@ exports.search = function (req, res, next) {
     });
   }
 
+
+
   // perform the search
   User
     .find({ $and: [
@@ -1503,7 +1505,9 @@ exports.search = function (req, res, next) {
     .select(exports.userMiniProfileFields + ' -_id')
     .sort({ score: { $meta: 'textScore' } })
     // limit the amount of found users (config)
-    .limit(config.limits.userSearchLimit)
+    .limit(config.limits.userSearchPageLimit)
+    // skip to the page, automatically handles invalid page number
+    .skip((req.query.page-1)*config.limits.userSearchPageLimit)
     .exec(function (err, users) {
       if (err) return next(err);
       return res.send(users);
