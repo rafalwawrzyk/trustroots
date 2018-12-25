@@ -30,6 +30,7 @@ don't hesitate to [contact us](https://www.trustroots.org/contact/)._
 - [Angular-Directives.md](Angular-Directives.md)
 - [We are moving to React](React.md)
 - [Development.md](Development.md)
+- [Logging.md](Logging.md)
 - [Icons.md](Icons.md)
 - [Monitoring.md](Monitoring.md)
 - [oAuth-apps.md](oAuth-apps.md)
